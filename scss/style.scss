@@ -189,6 +189,8 @@ body {
   @include fluid(font-size, 16px, 18px);
   background-color: #b0722e;
   border-radius: 30px;
+  display: block;
+  width: fit-content;
   color: #ffffff;
   transition: background-color .38s ease-in-out;
   cursor: pointer;
@@ -634,6 +636,59 @@ body {
     width: 36%;
   }
 }
+.reviews {
+  @include fluid(margin-bottom, 30px, 60px);
+  &__container {
+    position: relative;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__slider {
+    margin-bottom: 10px;
+   .swiper-wrapper {
+    padding-left: 10px;
+    padding-bottom: 30px;
+   }
+    &-slide {
+    @include fluid(padding-top, 10px, 15px);
+    @include fluid(padding-bottom, 10px, 15px);
+    @include fluid(padding-left, 10px, 15px);
+    @include fluid(padding-right, 10px, 15px);
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #cccccc;
+    box-shadow: 7px 13px 13px 3px rgba(0, 0, 0, .5);
+    }
+    &-pagination {
+      position: static;
+      .swiper-pagination-bullet {
+        background: #b99164;
+        opacity: .6;
+        width: 15px;
+        height: 15px;
+      }
+      .swiper-pagination-bullet-active {
+        background: #b57124;
+        opacity: 1;
+      }
+    }
+    &-title {
+      margin-bottom: 10px;
+    }
+    &-date {
+      margin-bottom: 20px;
+      font-size: 14px;
+      opacity: .5;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 
 .modal {
   display: none;
