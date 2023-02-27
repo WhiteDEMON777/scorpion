@@ -166,7 +166,7 @@ body {
 }
 
 .title {
-  @include fluid(font-size, 22px, 26px);
+  @include fluid(font-size, 18px, 26px);
   font-weight: 500;
   line-height: 1.1;
   &--big {
@@ -647,15 +647,9 @@ body {
   }
   &__slider {
     margin-bottom: 10px;
-   .swiper-wrapper {
-    padding-left: 10px;
-    padding-bottom: 30px;
-   }
+   
     &-slide {
-    @include fluid(padding-top, 10px, 15px);
-    @include fluid(padding-bottom, 10px, 15px);
-    @include fluid(padding-left, 10px, 15px);
-    @include fluid(padding-right, 10px, 15px);
+    padding: 15px;
     height: auto;
     border-radius: 10px;
     border: 2px solid #cccccc;
@@ -663,16 +657,8 @@ body {
     }
     &-pagination {
       position: static;
-      .swiper-pagination-bullet {
-        background: #b99164;
-        opacity: .6;
-        width: 15px;
-        height: 15px;
-      }
-      .swiper-pagination-bullet-active {
-        background: #b57124;
-        opacity: 1;
-      }
+      margin-bottom: 15px;
+      
     }
     &-title {
       margin-bottom: 10px;
@@ -688,8 +674,20 @@ body {
     justify-content: flex-end;
   }
 }
-
-
+.swiper-wrapper {
+  padding-left: 10px;
+  padding-bottom: 30px;
+ }
+ .swiper-pagination-bullet {
+  background: #b99164;
+  opacity: .6;
+  width: 15px;
+  height: 15px;
+}
+.swiper-pagination-bullet-active {
+  background: #b57124;
+  opacity: 1;
+}
 .modal {
   display: none;
   width: 500px;
@@ -1018,6 +1016,13 @@ body {
   }
   .appeal__subtitle {
     width: 100%;
+  }
+  .swiper-wrapper {
+    padding-left: 0;
+    padding-bottom: 30px;
+  }
+  .reviews__link {
+    justify-content: center;
   }
   .modal {
     width: 300px;
