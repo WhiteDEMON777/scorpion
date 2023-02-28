@@ -40,7 +40,7 @@ $(document).ready(function(){
 
     $(".phoneMask").mask("+7 (999) 999-99-99");
 
-    var modalForm = document.querySelector('.modal__form')
+    var modalForm = document.querySelector('.applicationForm')
     var btnSuccessModal = document.querySelector('.btnSuccessModal')
     var appealForm = document.querySelector('.appeal__form')
     var btnSuccessAppeal = document.querySelector('.btnSuccessAppeal')
@@ -64,6 +64,8 @@ $(document).ready(function(){
                             src: '#modalSuccess',
                         })
                         appealForm.reset();
+                        ym(92633358,'reachGoal','konsultaciya');
+                        console.log("Цель: konsultaciya")
                     }
                 });
             } else {
@@ -91,6 +93,8 @@ $(document).ready(function(){
                                 src: '#modalSuccess',
                             })
                             modalForm.reset();
+                            ym(92633358,'reachGoal','zayavka')
+                            console.log("Цель: zayavka");
                         }
                     });
                 } else {
@@ -118,6 +122,8 @@ $(document).ready(function(){
                                     src: '#modalReviewsSuccess',
                                 })
                                 reviewsForm.reset();
+                                ym(92633358,'reachGoal','otzyv');
+                                console.log("Цель: otzyv");
                             }
                         });
                     } else {
@@ -181,3 +187,4 @@ $(window).on('load', function () {
         wow.init();
     }
 });
+
