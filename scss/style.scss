@@ -22,7 +22,7 @@ button{
 html, body{
   overflow-x: hidden;
 }
-input {
+input, textarea {
   border: none;
   outline:none;
   font-family: 'Roboto';
@@ -36,6 +36,7 @@ input {
   padding: 10px 15px;
   font-size: 16px;
   width: 100%;
+  resize: none;
   cursor: initial;
   transition: all .38s ease-in-out;
   margin-bottom: 15px;
@@ -734,6 +735,9 @@ body {
       width: 100%;
     }
   }
+  &__textarea {
+    height: 200px;
+  }
   &__iconError {
     width: 80px;
     height: 80px;
@@ -1026,5 +1030,8 @@ body {
   }
   .modal {
     width: 300px;
+    &__textarea {
+      height: 100px;
+    }
   }
 }

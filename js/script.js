@@ -44,6 +44,8 @@ $(document).ready(function(){
     var btnSuccessModal = document.querySelector('.btnSuccessModal')
     var appealForm = document.querySelector('.appeal__form')
     var btnSuccessAppeal = document.querySelector('.btnSuccessAppeal')
+    var reviewsForm = document.querySelector('.reviewsform')
+    var btnReviewsModal = document.querySelector('.btnReviewsModal')
 
     btnSuccessAppeal.addEventListener("click", function(event) {
         event.preventDefault();
@@ -97,10 +99,33 @@ $(document).ready(function(){
                     })
                 }
             })
-            
-    
-    
-    
+
+            btnReviewsModal.addEventListener("click", function(event) {
+                event.preventDefault();
+                var name = reviewsForm.querySelector('.name').value
+                var reviews = reviewsForm.querySelector('.reviews').value
+                if( reviews !== '' && name !== '') {
+                        $.ajax({
+                            url: "/submit.php",
+                            type: "post",
+                            data: {
+                                name: name,
+                                reviews: reviews,
+                            },
+                            success: function (e) {
+                                $.fancybox.close()
+                                $.fancybox.open({
+                                    src: '#modalReviewsSuccess',
+                                })
+                                reviewsForm.reset();
+                            }
+                        });
+                    } else {
+                        $.fancybox.open({
+                            src: '#modalReviewsError',
+                        })
+                    }
+                })
 });
 
 
